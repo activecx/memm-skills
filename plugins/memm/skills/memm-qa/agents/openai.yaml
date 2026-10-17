@@ -1,0 +1,11 @@
+interface:
+  display_name: "Memm QA"
+  short_description: "Review work before it is final"
+  default_prompt: "Use $memm-qa to review these results against the brief and list anything that must be fixed."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "memm"
+      description: "Memm tools (memm.ai)"
+      transport: "streamable_http"
+      url: "https://memm.ai/api/mcp"

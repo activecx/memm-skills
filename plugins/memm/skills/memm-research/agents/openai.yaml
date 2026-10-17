@@ -1,0 +1,11 @@
+interface:
+  display_name: "Memm Research"
+  short_description: "Understand a business, its customers and competitors"
+  default_prompt: "Use $memm-research to study my business from its website and public sources before we plan ads."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "memm"
+      description: "Memm tools (memm.ai)"
+      transport: "streamable_http"
+      url: "https://memm.ai/api/mcp"

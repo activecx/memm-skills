@@ -1,0 +1,11 @@
+interface:
+  display_name: "Memm Workflow"
+  short_description: "Stages, owners, time, credits and checks"
+  default_prompt: "Use $memm-workflow-plan to turn this plan into stages with owners, time, credits and checks."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "memm"
+      description: "Memm tools (memm.ai)"
+      transport: "streamable_http"
+      url: "https://memm.ai/api/mcp"

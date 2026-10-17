@@ -1,0 +1,20 @@
+{
+  "name": "memm",
+  "interface": {
+    "displayName": "Memm"
+  },
+  "plugins": [
+    {
+      "name": "memm",
+      "source": {
+        "source": "local",
+        "path": "./plugins/memm"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Creativity"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+interface:
+  display_name: "Memm Lip-sync"
+  short_description: "Make a photo speak or sing a recording"
+  default_prompt: "Use $memm-lip-sync to check my photo and recording and make a short lip-sync test."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "memm"
+      description: "Memm tools (memm.ai)"
+      transport: "streamable_http"
+      url: "https://memm.ai/api/mcp"

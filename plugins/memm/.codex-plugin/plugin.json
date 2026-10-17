@@ -1,0 +1,43 @@
+{
+  "name": "memm",
+  "version": "2.0.0",
+  "description": "Memm business-to-creative skills: research a business, plan growth and campaigns, develop ad concepts with their reasoning, choose models and control credits, produce images, video, voice, music, 3D and lip-sync through Memm, and check every result.",
+  "author": {
+    "name": "Memm",
+    "url": "https://memm.ai"
+  },
+  "homepage": "https://memm.ai/docs/en/skills",
+  "keywords": [
+    "memm",
+    "marketing",
+    "advertising",
+    "arabic",
+    "product-photography",
+    "video",
+    "lip-sync",
+    "business-research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Memm",
+    "shortDescription": "From business research to finished, checked ad creatives",
+    "longDescription": "Memm business-to-creative skills: research a business, plan growth and campaigns, develop ad concepts with their reasoning, choose models and control credits, produce images, video, voice, music, 3D and lip-sync through Memm, and check every result. Arabic-first. Generation needs a paid Memm plan connected at memm.ai/api/mcp; research and planning skills work without it.",
+    "developerName": "Memm",
+    "category": "Creativity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://memm.ai",
+    "privacyPolicyURL": "https://memm.ai/privacy",
+    "termsOfServiceURL": "https://memm.ai/terms",
+    "defaultPrompt": [
+      "Check my Memm connection and tell me what you can do",
+      "Study my business from its website and plan an ad campaign",
+      "Make my product photo speak this recording"
+    ],
+    "brandColor": "#7C3AED",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

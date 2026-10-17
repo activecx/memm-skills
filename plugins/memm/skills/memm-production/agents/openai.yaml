@@ -1,0 +1,11 @@
+interface:
+  display_name: "Memm Production"
+  short_description: "Make images, video, voice, music and 3D"
+  default_prompt: "Use $memm-production to make the approved baseline asset, after showing me the price."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "memm"
+      description: "Memm tools (memm.ai)"
+      transport: "streamable_http"
+      url: "https://memm.ai/api/mcp"

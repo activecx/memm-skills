@@ -1,0 +1,11 @@
+interface:
+  display_name: "Memm Tools and Costs"
+  short_description: "Pick models and control credits"
+  default_prompt: "Use $memm-tool-selection to choose the right Memm model for this asset and show me the cost per acceptable result."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "memm"
+      description: "Memm tools (memm.ai)"
+      transport: "streamable_http"
+      url: "https://memm.ai/api/mcp"

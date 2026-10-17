@@ -1,0 +1,11 @@
+interface:
+  display_name: "Memm Business Plan"
+  short_description: "A focused growth plan with tests"
+  default_prompt: "Use $memm-business-plan to turn our research into a focused growth plan with one first experiment."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "memm"
+      description: "Memm tools (memm.ai)"
+      transport: "streamable_http"
+      url: "https://memm.ai/api/mcp"

@@ -1,0 +1,11 @@
+interface:
+  display_name: "Memm Creative Strategy"
+  short_description: "Ad concepts with the reasoning behind them"
+  default_prompt: "Use $memm-creative-strategy to propose genuinely different ad concepts for my product and explain why each could work."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "memm"
+      description: "Memm tools (memm.ai)"
+      transport: "streamable_http"
+      url: "https://memm.ai/api/mcp"

@@ -1,0 +1,11 @@
+interface:
+  display_name: "Memm: start here"
+  short_description: "Check your Memm connection and plan a job"
+  default_prompt: "Use $memm-start to check my Memm connection and tell me what you can do for my business."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "memm"
+      description: "Memm tools (memm.ai)"
+      transport: "streamable_http"
+      url: "https://memm.ai/api/mcp"
