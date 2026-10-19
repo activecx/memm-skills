@@ -70,7 +70,6 @@ Treat an error as uncharged only if its text says so. Four answers can come **af
 | `PROMPT_NOT_ALLOWED`, `IMAGE_OR_PROMPT_NOT_ALLOWED` | Memm's safety check refused | Give the reason and the reference; if the user thinks it is wrong, they send the reference via memm.ai/contact. Do not try to get around the check. |
 | `VIDEO_IN_FLIGHT`, `TOO_MANY_RUNNING`, `AUDIO_IN_FLIGHT`, `THREED_IN_FLIGHT` | busy, nothing charged | Wait for the running job, then send again. |
 | `VIDEO_QUEUE_FULL` | queue full | Wait, or cancel a queued clip. |
-| `CONSENT_REQUIRED` | permission step missing | Ask the consent question and line (see memm-lip-sync). |
 | `INVALID_PROJECT`, `PROJECT_NOT_FOUND` | wrong project id | List projects again; projects are created at memm.ai/canvas. |
 | `GENERATION_FAILED`, `JOB_EXPIRED` | the model failed after the charge | Report whether the credits came back (`refunded`, or `refund pending`, which retries automatically). Do not resubmit to recover credits. Diagnose, change one thing, quote, ask, then use a new key. |
 | `CHARGE_UNCONFIRMED` | a charge may have been taken; the clip will not run; any credits taken come back automatically in about 10 minutes | Tell the user. Check `memm_get_credits` and `memm_list_jobs`. Wait about 10 minutes for the refund, then send again under a **new** key with a fresh yes. Do not resend immediately: the balance could be charged twice until the refund lands. |

@@ -5,7 +5,7 @@ description: Use when a photo should speak or sing a recording or song, a charac
 
 # Lip-sync and speaking performance
 
-Make a person or character in a photo speak or sing a recording, copy motion from a video, or edit the user's own video, with the inputs checked first, the permission step done properly, a short test when the outcome is uncertain, and an honest check of the result. Money and job rules: [Memm tools and jobs](references/memm-tools-and-jobs.md).
+Make a person or character in a photo speak or sing a recording, copy motion from a video, or edit the user's own video, with the inputs checked first, the price confirmed in one message, a short test when the outcome is uncertain, and an honest check of the result. Money and job rules: [Memm tools and jobs](references/memm-tools-and-jobs.md).
 
 ## 1. What is actually being asked
 
@@ -32,23 +32,20 @@ Read the current model names, limits and options from `memm_list_models` (`drive
 
 Send a findings message only when something needs the user (too long, too short, more than one face): "The recording is 22 seconds; the model takes up to 15. Which part should I use?". Otherwise go straight to the one message below.
 
-## 3. Quote and ask permission in ONE message
+## 3. Quote and confirm the price in ONE message
 
 1. Quote with `memm_quote_generation_cost`, passing the uploaded file (`audio_url` or `video_url`), the photo (`image_urls`), and the resolution or quality. The price depends on the file's length. If a short test makes sense (section 4), quote it too: both prices go in the same message.
-2. The quote's `consent` says `on_file` (a confirmation for this model, photo and file is remembered for 30 days) or `required` with the **question**, its **three options** and the **permission line**. When it is `on_file`, ask only for the price; never repeat the question.
-3. When it is `required`, send ONE message with the price (and the test price), the question with its three options numbered 1 to 3, and the permission line. Copy the question, the options and the line from the quote's consent block in the user's language (the Arabic text for Arabic); never translate or reword them yourself. End with: "Reply with the number that fits; your reply also means yes to the price and the line above." In Arabic: «اكتب رقم إجابتك، وردّك يعني موافقتك على السعر وعلى الإقرار أعلاه.»
-4. The answer (`self`, `someone_else` or `not_real`) is **the user's own**. If they already said plainly who is in the photo ("it's me", "my client", "a character I made with AI"), show that option as their answer and still show the line. "My photo" is not an answer. Never suggest an answer, never comment on whether a face looks real or AI-made, and never reuse an answer from notes for another photo. This holds even for a face made in this session: say it was made here and let them answer.
-5. If the user cannot confirm the line (for example the person is a child, a politician or a religious leader under the current line), stop. Do not generate and do not look for a way around it.
-6. Refused before it ran (`VIDEO_IN_FLIGHT`, a changed price): the answer still stands. Send the same `consent_confirmed` and `consent_basis` again, and ask again only if the price is higher.
-7. Video edit asks its own question ("Who appears in the video or photo?"): use the question the quote returns, never the photo question.
+2. Send ONE message with the price (and the test price) and wait for a clear yes. There is no permission question and no line to show: Memm stopped asking who is in the photo on 2026-10-19, and the answer is never yours to ask or to guess. Do not add a question of your own.
+3. A clip refused before it ran (`VIDEO_IN_FLIGHT`, a changed price) costs nothing. Ask again only if the new price is higher.
+4. Video edit works the same way: the instruction is the user's, the price is the only thing to confirm.
 
 ## 4. Test small when the result is uncertain
 
-New face, singing, fast speech, a strong accent, or a demanding client: suggest a test at 720p **on the same file** before the 1080p final. The permission answer carries over to the final, so only the price is asked again. A shorter cut is a new file and asks the question again; use it only if the user prefers it.
+New face, singing, fast speech, a strong accent, or a demanding client: suggest a test at 720p **on the same file** before the 1080p final. Only the price is asked again for the final. A shorter cut is a new file and a new price; use it only if the user prefers it.
 
 ## 5. Generate
 
-- `memm_generate` with the uploaded file URL, the photo URL, resolution or quality, `consent_confirmed: true` and `consent_basis` (only when consent is required), `confirm_credit_cost`, an `idempotency_key` and the `project_id`. Record the row in `jobs.md` first.
+- `memm_generate` with the uploaded file URL, the photo URL, resolution or quality, `confirm_credit_cost`, an `idempotency_key` and the `project_id`. Do not send `consent_confirmed` or `consent_basis`: they are ignored. Record the row in `jobs.md` first.
 - For lip-sync the prompt is optional **performance direction** (feeling and movement, never appearance), in English, up to 500 characters. Do not ask for it. If the user describes a feeling or a movement, translate their words faithfully into English and add nothing; otherwise send an empty string (Memm adds its own neutral default).
 - These models never queue: `VIDEO_IN_FLIGHT` means another clip is running; poll it, then send again.
 - Poll about every 20 seconds.
@@ -69,7 +66,6 @@ The clip link and `designId`, the QA verdict with the human checks still to do, 
 
 | Mistake | Instead |
 |---|---|
-| Choosing "not a real person" because the face looks AI-made | Ask the user; use their answer |
 | Picking which 15 seconds of a song to use | Ask the user which part |
 | Downloading the song from a link | Ask for the file itself |
 | Re-sending after `VIDEO_IN_FLIGHT` straight away | Wait for the running clip |

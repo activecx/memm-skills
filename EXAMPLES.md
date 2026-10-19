@@ -43,8 +43,8 @@ Each example shows which skills run, where the assistant stops for the user, wha
 > "Make this photo of me say my 12-second voice note."
 
 - **memm-lip-sync:** checks the photo (one adult, front-facing) and the recording (3 to 15 seconds). Uploads both files with the upload ticket.
-- One message: the price (and a 720p test price), the question "Who is in the photo?" with its three numbered answers, and the permission line, copied from the quote.
-- After the answer: generate, then compare `boundInputs` with what was sent, check the duration and sampled frames, and list what the user must check by watching with sound (sync, pronunciation).
+- One message: the price (and a 720p test price). There is no permission question to ask.
+- After the yes: generate, then compare `boundInputs` with what was sent, check the duration and sampled frames, and list what the user must check by watching with sound (sync, pronunciation).
 - Invalid inputs (two people, a child, a 42-second song) stop the job before any charge, with a clear request for what is needed.
 
 ## 6. Recovery: a failed clip and a partial batch
