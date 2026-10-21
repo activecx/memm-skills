@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Official Memm skills for Claude Code and Codex",
-    "version": "2.0.0"
+    "version": "2.1.0"
   },
   "plugins": [
     {
       "name": "memm",
       "source": "./plugins/memm",
       "description": "Memm business-to-creative skills: research a business, plan growth and campaigns, develop ad concepts with their reasoning, choose models and control credits, produce images, video, voice, music, 3D and lip-sync through Memm, and check every result.",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "category": "creativity",
       "homepage": "https://memm.ai/docs/en/skills"
     }

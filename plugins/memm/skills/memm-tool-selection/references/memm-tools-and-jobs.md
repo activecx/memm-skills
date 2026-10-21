@@ -81,7 +81,7 @@ Report each asset separately: done (link), failed (reason, refund state), not se
 
 ## Files and uploads
 
-- Local files go through `memm_get_upload_ticket`: one file per ticket, valid 10 minutes. Run the returned `curl` (Git Bash, macOS, Linux) or `powershell` command with the real path, then use the `url` from the upload's answer. Photos JPEG/PNG/WebP up to 10 MB; songs MP3/WAV up to 15 MB; videos MP4/MOV up to 100 MB.
+- Local files go through `memm_get_upload_ticket`: one file per ticket, valid 10 minutes. Pass `size_bytes` when you know the file's size. Run the returned `curl` (Git Bash, macOS, Linux) or `powershell` command with the real path, then use the `url` from the upload's answer. A file up to 4.4 MB goes through memm.ai itself (`via: "memm"`); a bigger file gets the direct vercel.com upload (`via: "direct"`, or the `fallback` of a memm.ai answer that came back HTTP 413). If the command is blocked (HTTP 403, a proxy or connection error), the user's Claude Code sandbox may be blocking the domain: ask them to allow `memm.ai` (or `vercel.com` for a big file) in the sandbox network settings, or to approve the command outside the sandbox. Photos JPEG/PNG/WebP up to 10 MB; songs MP3/WAV up to 15 MB; videos MP4/MOV up to 100 MB.
 - `image_urls` accepts Memm URLs only (uploads, product images, earlier designs). Never upload a user's files to any other service.
 - Songs and videos for lip-sync, motion control and video edit must be the user's own files. Never download them from a link or website.
 - If you cannot run the upload command, say so and send the user to the Video tab at https://memm.ai/canvas.

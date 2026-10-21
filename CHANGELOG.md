@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.0 (2026-10-21)
+
+- New skill: **memm-capoeira** (Memm Capoeira). Put your product, character, outfit or face inside an existing video and keep its motion (Objects swap), or rebuild a clip's motion with your character (Motion transfer). It asks who to change in clips with more than one person, writes the instruction in English for the model, confirms the price once and checks the result. Uses the Motion Library (`memm_search_motion_library`) or your own clip.
+- Memm Capoeira is for paid plans; takes are 5, 10 or 15 seconds at 720p or 1080p.
+
 ## 2.0.0 (2026-10-17)
 
 - First public release: download from https://memm.ai/docs/en/skills or install from https://github.com/activecx/memm-skills (`claude plugin marketplace add activecx/memm-skills`, `codex plugin marketplace add activecx/memm-skills`).

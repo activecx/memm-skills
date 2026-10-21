@@ -1,0 +1,11 @@
+interface:
+  display_name: "Memm Capoeira"
+  short_description: "Put your product or character into a video and keep its motion"
+  default_prompt: "Use $memm-capoeira to put my product or character into a video, step by step, and tell me the price first."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "memm"
+      description: "Memm tools (memm.ai)"
+      transport: "streamable_http"
+      url: "https://memm.ai/api/mcp"

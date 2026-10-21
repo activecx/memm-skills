@@ -9,7 +9,8 @@ Official Memm skills that take your AI assistant from understanding a business t
 5. **Choose models and control credits**: live prices, cost per acceptable result, one budget approval.
 6. **Produce** images, product photos, Arabic ads, video, voice-overs, music, sound effects and 3D through Memm.
 7. **Lip-sync**: make a photo speak or sing a recording, copy motion from a video, edit your own video.
-8. **Check** every result against the brief before calling it final.
+8. **Capoeira**: put your product, character or outfit inside an existing video and keep its motion, or move your character with a clip from the Motion Library.
+9. **Check** every result against the brief before calling it final.
 
 Arabic-first: the assistant answers Arabic requests in semi-formal Arabic, writes Memm as ميم and prices in كريديت.
 
@@ -23,6 +24,7 @@ Arabic-first: the assistant answers Arabic requests in semi-formal Arabic, write
 | memm-tool-selection | Which model, what it costs, how to spend fewer credits |
 | memm-production | Making the assets, retries, partial results |
 | memm-lip-sync | Talking or singing photos, motion copy, editing your own video |
+| memm-capoeira | Your product, character or outfit inside an existing video (Objects swap, Motion transfer) |
 | memm-qa | Reviewing work and fixing mistakes |
 
 You do not need to name a skill. Ask in your own words ("make an ad for my perfume", «أريد إعلانًا لمنتجي») and the assistant picks it. You can also call one directly: `/memm:memm-start` in Claude Code, `$memm-start` in Codex.
@@ -35,7 +37,7 @@ You do not need to name a skill. Ask in your own words ("make an ad for my perfu
 
 ## Get the package
 
-- **Download** from memm.ai: https://memm.ai/downloads/skills/memm-skills-2.0.0.zip (guide: https://memm.ai/docs/en/skills), or
+- **Download** from memm.ai: https://memm.ai/downloads/skills/memm-skills-2.1.0.zip (guide: https://memm.ai/docs/en/skills), or
 - **Clone** this repository: `git clone https://github.com/activecx/memm-skills.git`
 
 ## Install
@@ -74,7 +76,7 @@ Then steps 3 and 4 above.
 ### What the installer changes
 
 - **Claude Code:** adds the `memm` marketplace and installs the `memm@memm` plugin (user scope), using Claude Code's own commands.
-- **Codex:** copies the nine skill folders into `~/.agents/skills` (each marked with a `.memm-skill` file). This location works in the Codex app, CLI and IDE extension.
+- **Codex:** copies the ten skill folders into `~/.agents/skills` (each marked with a `.memm-skill` file). This location works in the Codex app, CLI and IDE extension.
 - **Connection:** adds a server named `memm` (`https://memm.ai/api/mcp`) only if no connection to that address exists. If you already use Memm as a claude.ai connector, a ChatGPT app, or your own `claude mcp` / `codex mcp` entry, nothing is added.
 - **Safety:** settings change only through each client's own commands; `~/.claude.json` and `~/.codex/config.toml` are backed up first to `~/.memm/skills/backup` (the last three copies are kept). Other settings, servers, skills and credentials are not touched. No keys are stored in the skill files.
 
